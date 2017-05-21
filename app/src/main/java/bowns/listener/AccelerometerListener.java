@@ -4,10 +4,6 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 
-/**
- * Created by bowns on 5/21/2017.
- */
-
 public class AccelerometerListener implements SensorEventListener {
 
     @Override
