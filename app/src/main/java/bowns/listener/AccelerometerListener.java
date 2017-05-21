@@ -21,8 +21,8 @@ public class AccelerometerListener implements SensorEventListener {
 
         float [] gValues = event.values;
 
-        for(float gValue : gValues) {
-            float temp = gValue;
-        }
+        float x = gValues[0];
+        float y = gValues[1];
+        float z = gValues[2];
     }
 }
