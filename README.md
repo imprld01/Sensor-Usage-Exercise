@@ -1,7 +1,7 @@
 # Sensor-Usage-Exercise
 
 A program to access many types of sensors that Android supports.  
-The program uses *SensorManager* to get some useful sensors,  
+This program uses *SensorManager* to get some useful sensors,  
 telling *SensorManager* to attach corresponding listener to each sensor.
 
 This repository as a **note** help me to find the code in the future! 😀

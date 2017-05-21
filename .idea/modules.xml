@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SensorUsageExercise.iml" filepath="$PROJECT_DIR$/SensorUsageExercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sensor-Usage-Exercise.iml" filepath="$PROJECT_DIR$/Sensor-Usage-Exercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
