@@ -9,24 +9,24 @@ This repository as a **note** help me to find the code in the future! 😀
 # Sensor List
 
 1. Accelerometer
-  * (x, y, z)
-  * m/s<sup>2</sup>
-1. Gyroscope
+    * (x, y, z)
+    * m/s<sup>2</sup>
+2. Gyroscope
   * (x, y, z)
   * degree
-1. Light
+3. Light
   * lx(Lux)
-1. Magnetic Field
+4. Magnetic Field
   * (x, y, z)
   * µT(microtesla)
-1. Orientation
+5. Orientation
   * (x, y, z)
   * degree
-1. Pressure
+6. Pressure
   * kPa(kilopascal)
-1. Proximity
+7. Proximity
   * m(meter)
-1. Temperature
+8. Temperature
   * degree
 
 # License
