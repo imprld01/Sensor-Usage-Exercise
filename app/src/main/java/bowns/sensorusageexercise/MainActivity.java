@@ -34,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
         super.onResume();
 
-        this.sm.getSensorList(Sensor.TYPE_ALL).size();
+        /* get total sensor list that android supports */
+        //this.sm.getSensorList(Sensor.TYPE_ALL).size();
 
         Sensor acc = this.sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         this.sm.registerListener(this.al, acc, this.sm.SENSOR_DELAY_NORMAL);
