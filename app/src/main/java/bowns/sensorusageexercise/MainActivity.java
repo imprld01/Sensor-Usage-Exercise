@@ -1,17 +1,22 @@
 package bowns.sensorusageexercise;
 
 import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements SensorEventListener {
+import bowns.listener.AccelerometerListener;
+
+public class MainActivity extends AppCompatActivity {
+
+    private TextView tv_x;
+    private TextView tv_y;
+    private TextView tv_z;
 
     private SensorManager sm;
+    private AccelerometerListener al;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +25,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
-        this.buildViews();
+        this.findViews();
 
-        sm = (SensorManager)getSystemService(SENSOR_SERVICE);
+        this.sm = (SensorManager)getSystemService(SENSOR_SERVICE);
+        this.al = new AccelerometerListener(this.tv_x, this.tv_y, this.tv_z);
     }
 
     @Override
@@ -30,10 +36,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         super.onResume();
 
-        sm.getSensorList(Sensor.TYPE_ALL).size();
+        this.sm.getSensorList(Sensor.TYPE_ALL).size();
 
-        Sensor acc = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        sm.registerListener(this, acc, sm.SENSOR_DELAY_NORMAL);
+        Sensor acc = this.sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        this.sm.registerListener(this.al, acc, this.sm.SENSOR_DELAY_NORMAL);
     }
 
     @Override
@@ -41,43 +47,24 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         super.onPause();
 
-        sm.unregisterListener(this);
+        this.sm.unregisterListener(this.al);
     }
 
-    private void buildViews() {
+    private void findViews() {
 
-        TextView tv_x = (TextView)findViewById(R.id.x_axis);
-        TextView tv_y = (TextView)findViewById(R.id.y_axis);
-        TextView tv_z = (TextView)findViewById(R.id.z_axis);
+        TextView x_label = (TextView)findViewById(R.id.x_axis_label);
+        TextView y_label = (TextView)findViewById(R.id.y_axis_label);
+        TextView z_label = (TextView)findViewById(R.id.z_axis_label);
 
-        tv_x.setTextSize(25);
-        tv_y.setTextSize(25);
-        tv_z.setTextSize(25);
-    }
+        this.tv_x = (TextView)findViewById(R.id.x_axis);
+        this.tv_y = (TextView)findViewById(R.id.y_axis);
+        this.tv_z = (TextView)findViewById(R.id.z_axis);
 
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {}
-
-    @Override
-    public void onSensorChanged(SensorEvent event) {
-
-        TextView tv_x = (TextView)findViewById(R.id.x_axis);
-        TextView tv_y = (TextView)findViewById(R.id.y_axis);
-        TextView tv_z = (TextView)findViewById(R.id.z_axis);
-
-        Sensor acc = event.sensor;
-
-        acc.getName();
-        acc.getType();
-        acc.getPower();
-        acc.getVendor();
-
-        float [] gValues = event.values;
-
-        tv_x.setText("X-Axis: " + String.valueOf(gValues[0]));
-        tv_y.setText("Y-Axis: " + String.valueOf(gValues[1]));
-        tv_z.setText("Z-Axis: " + String.valueOf(gValues[2]));
-        float y = gValues[1];
-        float z = gValues[2];
+        x_label.setTextSize(25);
+        y_label.setTextSize(25);
+        z_label.setTextSize(25);
+        this.tv_x.setTextSize(25);
+        this.tv_y.setTextSize(25);
+        this.tv_z.setTextSize(25);
     }
 }
