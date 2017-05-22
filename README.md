@@ -15,17 +15,17 @@ This repository as a **note** help me to find the code in the future! 😀
    * (x, y, z)
    * degree
 3. Light 燈光
-   * lx(Lux)
+   * lx (Lux)
 4. Magnetic Field 磁力計
    * (x, y, z)
-   * µT(microtesla)
+   * µT (microtesla)
 5. Orientation 方向感測器
    * (x, y, z)
    * degree
 6. Pressure 壓力計
-   * kPa(kilopascal)
+   * kPa (kilopascal)
 7. Proximity 距離感測器
-   * m(meter)
+   * m (meter)
 8. Temperature 溫度計
    * degree
 
