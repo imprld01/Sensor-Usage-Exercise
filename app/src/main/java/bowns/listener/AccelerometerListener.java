@@ -24,13 +24,9 @@ public class AccelerometerListener implements SensorEventListener {
     @Override
     public void onSensorChanged(SensorEvent event) {
 
-        Sensor acc = event.sensor;
-
-        acc.getName();
-        acc.getType();
-        acc.getPower();
-        acc.getVendor();
-
+        /* get sensor by event, and get the sensor info by this obj */
+        // Sensor acc = event.sensor;
+        
         float [] gValues = event.values;
 
         double x = Math.round(gValues[0] * 100) / 100.0;
