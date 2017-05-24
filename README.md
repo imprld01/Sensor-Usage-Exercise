@@ -29,6 +29,3 @@ This repository as a **note** help me to find the code in the future! 😀
 8. Temperature 溫度計
    * degree
 
-# License
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)  
-This project is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/) and the [MIT License](LICENSE.md).
